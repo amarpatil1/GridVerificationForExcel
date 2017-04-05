@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbTransferDeskService_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetLinkInstitutesDataFromGrid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pr_GetDomainList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="dbTransferDeskService_DevModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbTransferDeskService_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbTransferDeskService_DevEntities1" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetLinkInstitutesDataFromGrid" ReturnType="Collection(dbTransferDeskService_DevModel.GetLinkInstitutesDataFromGrid_Result)" />
+          <FunctionImport Name="pr_GetDomainList" ReturnType="Collection(dbTransferDeskService_DevModel.pr_GetDomainList_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetLinkInstitutesDataFromGrid_Result">
+          <Property Type="String" Name="grid_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="link" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="wikipedia_url" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="email_address" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Newlink" Nullable="true" MaxLength="8000" />
+        </ComplexType>
+        <ComplexType Name="pr_GetDomainList_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DomainName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="1" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbTransferDeskService_DevModelStoreContainer" CdmEntityContainer="dbTransferDeskService_DevEntities1" >
+          <FunctionImportMapping FunctionImportName="GetLinkInstitutesDataFromGrid" FunctionName="dbTransferDeskService_DevModel.Store.GetLinkInstitutesDataFromGrid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbTransferDeskService_DevModel.GetLinkInstitutesDataFromGrid_Result">
+                <ScalarProperty Name="grid_id" ColumnName="grid_id" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="wikipedia_url" ColumnName="wikipedia_url" />
+                <ScalarProperty Name="email_address" ColumnName="email_address" />
+                <ScalarProperty Name="Newlink" ColumnName="Newlink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pr_GetDomainList" FunctionName="dbTransferDeskService_DevModel.Store.pr_GetDomainList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbTransferDeskService_DevModel.pr_GetDomainList_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

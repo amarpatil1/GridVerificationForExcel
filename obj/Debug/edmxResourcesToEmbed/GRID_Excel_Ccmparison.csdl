@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTransferDeskService_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbTransferDeskService_DevEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetLinkInstitutesDataFromGrid" ReturnType="Collection(dbTransferDeskService_DevModel.GetLinkInstitutesDataFromGrid_Result)" />
+    <FunctionImport Name="pr_GetDomainList" ReturnType="Collection(dbTransferDeskService_DevModel.pr_GetDomainList_Result)" />
+  </EntityContainer>
+  <ComplexType Name="GetLinkInstitutesDataFromGrid_Result">
+    <Property Type="String" Name="grid_id" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="link" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="wikipedia_url" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="email_address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Newlink" Nullable="true" MaxLength="8000" />
+  </ComplexType>
+  <ComplexType Name="pr_GetDomainList_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="DomainName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="1" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+</Schema>

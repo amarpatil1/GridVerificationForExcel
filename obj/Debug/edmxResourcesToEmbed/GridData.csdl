@@ -1,0 +1,1703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTransferDeskService_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbTransferDeskService_DevEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AffillationMasters" EntityType="dbTransferDeskService_DevModel.AffillationMaster" />
+    <EntitySet Name="AffillationReviewerlinks" EntityType="dbTransferDeskService_DevModel.AffillationReviewerlink" />
+    <EntitySet Name="AreaOfExpertiseMasters" EntityType="dbTransferDeskService_DevModel.AreaOfExpertiseMaster" />
+    <EntitySet Name="AreaOfExpReviewerlinks" EntityType="dbTransferDeskService_DevModel.AreaOfExpReviewerlink" />
+    <EntitySet Name="ArticleTypes" EntityType="dbTransferDeskService_DevModel.ArticleType" />
+    <EntitySet Name="AutoLoginEmailsForMSJournals" EntityType="dbTransferDeskService_DevModel.AutoLoginEmailsForMSJournal" />
+    <EntitySet Name="BookMasters" EntityType="dbTransferDeskService_DevModel.BookMaster" />
+    <EntitySet Name="BookUserRoles" EntityType="dbTransferDeskService_DevModel.BookUserRole" />
+    <EntitySet Name="Cities" EntityType="dbTransferDeskService_DevModel.City" />
+    <EntitySet Name="Countries" EntityType="dbTransferDeskService_DevModel.Country" />
+    <EntitySet Name="DepartmentMasters" EntityType="dbTransferDeskService_DevModel.DepartmentMaster" />
+    <EntitySet Name="EmailDetails" EntityType="dbTransferDeskService_DevModel.EmailDetail" />
+    <EntitySet Name="Employees" EntityType="dbTransferDeskService_DevModel.Employee" />
+    <EntitySet Name="ErrorCategories" EntityType="dbTransferDeskService_DevModel.ErrorCategory" />
+    <EntitySet Name="Grid_Link" EntityType="dbTransferDeskService_DevModel.Grid_Link" />
+    <EntitySet Name="Histories" EntityType="dbTransferDeskService_DevModel.History" />
+    <EntitySet Name="ImageDropDownLists" EntityType="dbTransferDeskService_DevModel.ImageDropDownList" />
+    <EntitySet Name="ImageDropDownMenus" EntityType="dbTransferDeskService_DevModel.ImageDropDownMenu" />
+    <EntitySet Name="ImpersonateCredential_" EntityType="dbTransferDeskService_DevModel.ImpersonateCredential_" />
+    <EntitySet Name="InstituteMasters" EntityType="dbTransferDeskService_DevModel.InstituteMaster" />
+    <EntitySet Name="Journals" EntityType="dbTransferDeskService_DevModel.Journal" />
+    <EntitySet Name="JournalArticleTypes" EntityType="dbTransferDeskService_DevModel.JournalArticleType" />
+    <EntitySet Name="JournalLinks" EntityType="dbTransferDeskService_DevModel.JournalLink" />
+    <EntitySet Name="JournalReviewerLinks" EntityType="dbTransferDeskService_DevModel.JournalReviewerLink" />
+    <EntitySet Name="JournalSections" EntityType="dbTransferDeskService_DevModel.JournalSection" />
+    <EntitySet Name="JournalStatus" EntityType="dbTransferDeskService_DevModel.JournalStatu" />
+    <EntitySet Name="JournalUserRoles" EntityType="dbTransferDeskService_DevModel.JournalUserRole" />
+    <EntitySet Name="Locations" EntityType="dbTransferDeskService_DevModel.Location" />
+    <EntitySet Name="Manuscripts" EntityType="dbTransferDeskService_DevModel.Manuscript" />
+    <EntitySet Name="ManuscriptBookErrorCategories" EntityType="dbTransferDeskService_DevModel.ManuscriptBookErrorCategory" />
+    <EntitySet Name="ManuscriptBookErrorCategoryHistories" EntityType="dbTransferDeskService_DevModel.ManuscriptBookErrorCategoryHistory" />
+    <EntitySet Name="ManuscriptBookLogins" EntityType="dbTransferDeskService_DevModel.ManuscriptBookLogin" />
+    <EntitySet Name="ManuscriptBookLoginDetails" EntityType="dbTransferDeskService_DevModel.ManuscriptBookLoginDetail" />
+    <EntitySet Name="ManuscriptBookScreenings" EntityType="dbTransferDeskService_DevModel.ManuscriptBookScreening" />
+    <EntitySet Name="ManuscriptBookScreeningHistories" EntityType="dbTransferDeskService_DevModel.ManuscriptBookScreeningHistory" />
+    <EntitySet Name="ManuscriptErrorCategories" EntityType="dbTransferDeskService_DevModel.ManuscriptErrorCategory" />
+    <EntitySet Name="ManuscriptErrorCategoryHistories" EntityType="dbTransferDeskService_DevModel.ManuscriptErrorCategoryHistory" />
+    <EntitySet Name="ManuscriptHistories" EntityType="dbTransferDeskService_DevModel.ManuscriptHistory" />
+    <EntitySet Name="ManuscriptLogins" EntityType="dbTransferDeskService_DevModel.ManuscriptLogin" />
+    <EntitySet Name="ManuscriptLoginDetails" EntityType="dbTransferDeskService_DevModel.ManuscriptLoginDetail" />
+    <EntitySet Name="MSReviewerErrorCategories" EntityType="dbTransferDeskService_DevModel.MSReviewerErrorCategory" />
+    <EntitySet Name="MSReviewerErrorCategoryHistories" EntityType="dbTransferDeskService_DevModel.MSReviewerErrorCategoryHistory" />
+    <EntitySet Name="MSReviewerLinks" EntityType="dbTransferDeskService_DevModel.MSReviewerLink" />
+    <EntitySet Name="MSReviewersSuggestions" EntityType="dbTransferDeskService_DevModel.MSReviewersSuggestion" />
+    <EntitySet Name="MSReviewersSuggestionHistories" EntityType="dbTransferDeskService_DevModel.MSReviewersSuggestionHistory" />
+    <EntitySet Name="MSReviewersSuggestionInfoes" EntityType="dbTransferDeskService_DevModel.MSReviewersSuggestionInfo" />
+    <EntitySet Name="MSSAreaOfExpertises" EntityType="dbTransferDeskService_DevModel.MSSAreaOfExpertise" />
+    <EntitySet Name="MSSReviewerMails" EntityType="dbTransferDeskService_DevModel.MSSReviewerMail" />
+    <EntitySet Name="OtherAuthors" EntityType="dbTransferDeskService_DevModel.OtherAuthor" />
+    <EntitySet Name="OtherAuthorHistories" EntityType="dbTransferDeskService_DevModel.OtherAuthorHistory" />
+    <EntitySet Name="PageMasters" EntityType="dbTransferDeskService_DevModel.PageMaster" />
+    <EntitySet Name="ReferenceReviewerlinks" EntityType="dbTransferDeskService_DevModel.ReferenceReviewerlink" />
+    <EntitySet Name="ReviewerErrorCategories" EntityType="dbTransferDeskService_DevModel.ReviewerErrorCategory" />
+    <EntitySet Name="ReviewerMailLinks" EntityType="dbTransferDeskService_DevModel.ReviewerMailLink" />
+    <EntitySet Name="ReviewerMasters" EntityType="dbTransferDeskService_DevModel.ReviewerMaster" />
+    <EntitySet Name="Roles" EntityType="dbTransferDeskService_DevModel.Role" />
+    <EntitySet Name="RoleToPages" EntityType="dbTransferDeskService_DevModel.RoleToPage" />
+    <EntitySet Name="SearchByMasters" EntityType="dbTransferDeskService_DevModel.SearchByMaster" />
+    <EntitySet Name="Sections" EntityType="dbTransferDeskService_DevModel.Section" />
+    <EntitySet Name="SlidingScales" EntityType="dbTransferDeskService_DevModel.SlidingScale" />
+    <EntitySet Name="States" EntityType="dbTransferDeskService_DevModel.State" />
+    <EntitySet Name="sysdiagrams" EntityType="dbTransferDeskService_DevModel.sysdiagram" />
+    <EntitySet Name="SysMasters" EntityType="dbTransferDeskService_DevModel.SysMaster" />
+    <EntitySet Name="TitleMasters" EntityType="dbTransferDeskService_DevModel.TitleMaster" />
+    <EntitySet Name="TitleReviewerlinks" EntityType="dbTransferDeskService_DevModel.TitleReviewerlink" />
+    <EntitySet Name="User_" EntityType="dbTransferDeskService_DevModel.User_" />
+    <EntitySet Name="UserAdmins" EntityType="dbTransferDeskService_DevModel.UserAdmin" />
+    <EntitySet Name="UserRoles" EntityType="dbTransferDeskService_DevModel.UserRole" />
+    <EntitySet Name="ArticleTypeAudits" EntityType="dbTransferDeskService_DevModel.ArticleTypeAudit" />
+    <EntitySet Name="JournalAudits" EntityType="dbTransferDeskService_DevModel.JournalAudit" />
+    <EntitySet Name="Manuscript_Backup" EntityType="dbTransferDeskService_DevModel.Manuscript_Backup" />
+    <EntitySet Name="ManuscriptAudits" EntityType="dbTransferDeskService_DevModel.ManuscriptAudit" />
+    <EntitySet Name="RoleAudits" EntityType="dbTransferDeskService_DevModel.RoleAudit" />
+    <EntitySet Name="SectionAudits" EntityType="dbTransferDeskService_DevModel.SectionAudit" />
+    <EntitySet Name="StatusMasters" EntityType="dbTransferDeskService_DevModel.StatusMaster" />
+    <EntitySet Name="UserAdminAudits" EntityType="dbTransferDeskService_DevModel.UserAdminAudit" />
+    <EntitySet Name="UserAudits" EntityType="dbTransferDeskService_DevModel.UserAudit" />
+    <EntitySet Name="UserMasterSlidingRangeCounts" EntityType="dbTransferDeskService_DevModel.UserMasterSlidingRangeCount" />
+    <EntitySet Name="UserRolesAudits" EntityType="dbTransferDeskService_DevModel.UserRolesAudit" />
+    <AssociationSet Name="FK_AffillationReviewerlink_AffillationMaster" Association="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_AffillationMaster">
+      <End Role="AffillationMaster" EntitySet="AffillationMasters" />
+      <End Role="AffillationReviewerlink" EntitySet="AffillationReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AffillationReviewerlink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="AffillationReviewerlink" EntitySet="AffillationReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster" Association="dbTransferDeskService_DevModel.FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster">
+      <End Role="AreaOfExpertiseMaster" EntitySet="AreaOfExpertiseMasters" />
+      <End Role="AreaOfExpertiseMaster1" EntitySet="AreaOfExpertiseMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster" Association="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster">
+      <End Role="AreaOfExpertiseMaster" EntitySet="AreaOfExpertiseMasters" />
+      <End Role="AreaOfExpReviewerlink" EntitySet="AreaOfExpReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpReviewerlink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="AreaOfExpReviewerlink" EntitySet="AreaOfExpReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_State" Association="dbTransferDeskService_DevModel.FK_City_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_Country" Association="dbTransferDeskService_DevModel.FK_State_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JournalID" Association="dbTransferDeskService_DevModel.FK_JournalID">
+      <End Role="JournalArticleType" EntitySet="JournalArticleTypes" />
+      <End Role="JournalArticleType1" EntitySet="JournalArticleTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JournalReviewerLink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_JournalReviewerLink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="JournalReviewerLink" EntitySet="JournalReviewerLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSReviewerLink_MSReviewersSuggestionInfo" Association="dbTransferDeskService_DevModel.FK_MSReviewerLink_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfoes" />
+      <End Role="MSReviewerLink" EntitySet="MSReviewerLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSReviewersSuggestionInfo_MSReviewersSuggestion" Association="dbTransferDeskService_DevModel.FK_MSReviewersSuggestionInfo_MSReviewersSuggestion">
+      <End Role="MSReviewersSuggestion" EntitySet="MSReviewersSuggestions" />
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo" Association="dbTransferDeskService_DevModel.FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfoes" />
+      <End Role="MSSAreaOfExpertise" EntitySet="MSSAreaOfExpertises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSSReviewerMail_MSReviewersSuggestionInfo" Association="dbTransferDeskService_DevModel.FK_MSSReviewerMail_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfoes" />
+      <End Role="MSSReviewerMail" EntitySet="MSSReviewerMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToPage_PageMaster" Association="dbTransferDeskService_DevModel.FK_RoleToPage_PageMaster">
+      <End Role="PageMaster" EntitySet="PageMasters" />
+      <End Role="RoleToPage" EntitySet="RoleToPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReferenceReviewerlink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_ReferenceReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="ReferenceReviewerlink" EntitySet="ReferenceReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReviewerMailLink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_ReviewerMailLink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="ReviewerMailLink" EntitySet="ReviewerMailLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TitleReviewerlink_ReviewerMaster" Association="dbTransferDeskService_DevModel.FK_TitleReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMasters" />
+      <End Role="TitleReviewerlink" EntitySet="TitleReviewerlinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToPage_Role" Association="dbTransferDeskService_DevModel.FK_RoleToPage_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="RoleToPage" EntitySet="RoleToPages" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AffillationMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AffillationReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_AffillationMaster" FromRole="AffillationMaster" ToRole="AffillationReviewerlink" />
+  </EntityType>
+  <EntityType Name="AffillationReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AffillationMasterID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AffillationMaster" Relationship="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_AffillationMaster" FromRole="AffillationReviewerlink" ToRole="AffillationMaster" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_ReviewerMaster" FromRole="AffillationReviewerlink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="AreaOfExpertiseMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ExpertiseLevel" Type="Int32" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AreaOfExpertiseMaster1" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster" FromRole="AreaOfExpertiseMaster" ToRole="AreaOfExpertiseMaster1" />
+    <NavigationProperty Name="AreaOfExpertiseMaster2" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster" FromRole="AreaOfExpertiseMaster1" ToRole="AreaOfExpertiseMaster" />
+    <NavigationProperty Name="AreaOfExpReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster" FromRole="AreaOfExpertiseMaster" ToRole="AreaOfExpReviewerlink" />
+  </EntityType>
+  <EntityType Name="AreaOfExpReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaOfExpertiseMasterID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AreaOfExpertiseMaster" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster" FromRole="AreaOfExpReviewerlink" ToRole="AreaOfExpertiseMaster" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_ReviewerMaster" FromRole="AreaOfExpReviewerlink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="ArticleType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleTypeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AutoLoginEmailsForMSJournal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" />
+    <Property Name="ArticleTypeID" Type="Int32" />
+    <Property Name="MSID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArticleTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Precision="7" />
+    <Property Name="AdditionalComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FromMail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ToMail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CCMail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="BCCMail" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="MailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailHtmlBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailImportance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MailReceivedDate" Type="DateTime" Precision="7" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BookMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookTitle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="GPUInformation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FTPLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BookUserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookMasterId" Type="Int32" Nullable="false" />
+    <Property Name="UserRolesId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <NavigationProperty Name="State" Relationship="dbTransferDeskService_DevModel.FK_City_State" FromRole="City" ToRole="State" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CountryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="States" Relationship="dbTransferDeskService_DevModel.FK_State_Country" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="DepartmentMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EmailDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="From" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="To" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CC" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="BCC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="SendDateTime" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="LeftDate" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="AlternateEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationFlag" Type="Boolean" />
+    <Property Name="ReportFlag" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrorCategoryName" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ManuscriptType" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Grid_Link">
+    <Key>
+      <PropertyRef Name="LinkId" />
+    </Key>
+    <Property Name="LinkId" Type="Int32" Nullable="false" />
+    <Property Name="GridId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowDatetime" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="ImageDropDownList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageDropDownMenuID" Type="Int32" Nullable="false" />
+    <Property Name="DropDownText" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ImageName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Modify_dttm" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ImageDropDownMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DropDownMenu" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Modify_dttm" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ImpersonateCredential_">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServerUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Domain" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="InstituteMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AliasName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsAliasActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="JournalArticleType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="JournalArticleTypes1" Relationship="dbTransferDeskService_DevModel.FK_JournalID" FromRole="JournalArticleType" ToRole="JournalArticleType1" />
+    <NavigationProperty Name="JournalArticleType1" Relationship="dbTransferDeskService_DevModel.FK_JournalID" FromRole="JournalArticleType1" ToRole="JournalArticleType" />
+  </EntityType>
+  <EntityType Name="JournalLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Journal_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Links" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalReviewerLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_JournalReviewerLink_ReviewerMaster" FromRole="JournalReviewerLink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="JournalSection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="SectionID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalUserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalMasterId" Type="Int32" Nullable="false" />
+    <Property Name="UserRolesId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Locationtype" Type="Int32" />
+    <Property Name="Isvisible" Type="Int32" />
+    <Property Name="Parentid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Manuscript">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleTypeID" Type="Int32" />
+    <Property Name="SectionID" Type="Int32" />
+    <Property Name="ArticleTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssignedEditor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="English_Lang_QualityID" Type="Int32" Nullable="false" />
+    <Property Name="Conclusion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" Nullable="false" />
+    <Property Name="TransferFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewerComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Abstarct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Precision="7" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="7" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityEndDate" Type="DateTime" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorAff" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="iThenticatePercentage" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HasTransferReport" Type="Boolean" />
+    <Property Name="Accurate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OverallAnalysisID" Type="Int32" />
+    <Property Name="IsAccurate" Type="Boolean" />
+    <Property Name="Comments_English_Lang_Quality" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Ethics_Compliance" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ParentManuscriptID" Type="Int32" />
+    <Property Name="RevisedDate" Type="DateTime" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="HandlingEditor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="JournalStatusID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManuscriptBookScreeningID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" Nullable="false" />
+    <Property Name="ManuscriptBookErrorCategoryHistoryID" Type="Int32" Nullable="false" />
+    <Property Name="ManuscriptBookScreeningID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CrestID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BookMasterID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceTypeID" Type="Int32" Nullable="false" />
+    <Property Name="StatusMasterTaskID" Type="Int32" />
+    <Property Name="ChapterNumber" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ChapterTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PageCount" Type="Int32" Nullable="false" />
+    <Property Name="ReceivedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RequesterName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialInstruction" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Revision" Type="Int32" />
+    <Property Name="RevisionParentID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ModifidedDate" Type="DateTime" Precision="7" />
+    <Property Name="ModifidedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ManuscriptStatusID" Type="Int32" Nullable="false" />
+    <Property Name="ShareDrivePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookLoginDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManuscriptBookLoginId" Type="Int32" Nullable="false" />
+    <Property Name="UserRoleId" Type="Int32" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="2" />
+    <Property Name="FetchedDate" Type="DateTime" Precision="2" />
+    <Property Name="SubmitedDate" Type="DateTime" Precision="2" />
+    <Property Name="JobStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceTypeStatusId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="JobProcessStatusId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="2" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="2" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookScreening">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookLoginID" Type="Int32" Nullable="false" />
+    <Property Name="RollID" Type="Int32" />
+    <Property Name="OverallAnalysisID" Type="Int32" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Int32" />
+    <Property Name="English_Lang_QualityID" Type="Int32" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CorrespondingAuthorAff" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="iThenticatePercentage" Type="Int32" />
+    <Property Name="Accurate" Type="Boolean" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_English_Lang_Quality" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_Ethics_Compliance" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_OverallAnalysis" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifidedDate" Type="DateTime" Precision="7" />
+    <Property Name="ModifidedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AssociateUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AssociateFinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityFinalSubmitDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookScreeningHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" Nullable="false" />
+    <Property Name="ManuscriptBookScreeningHistoryID" Type="Int32" Nullable="false" />
+    <Property Name="BookLoginID" Type="Int32" Nullable="false" />
+    <Property Name="RollID" Type="Int32" />
+    <Property Name="OverallAnalysisID" Type="Int32" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Int32" />
+    <Property Name="English_Lang_QualityID" Type="Int32" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CorrespondingAuthorAff" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
+    <Property Name="iThenticatePercentage" Type="Int32" />
+    <Property Name="Accurate" Type="Boolean" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_English_Lang_Quality" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_Ethics_Compliance" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Comments_OverallAnalysis" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifidedDate" Type="DateTime" Precision="7" />
+    <Property Name="ModifidedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AssociateUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AssociateFinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityFinalSubmitDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptErrorCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ManuscriptID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManuscriptErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" />
+    <Property Name="ManuscriptErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ManuscriptID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManuscriptHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" />
+    <Property Name="ManuscriptID" Type="Int32" Nullable="false" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleTypeID" Type="Int32" />
+    <Property Name="SectionID" Type="Int32" />
+    <Property Name="ArticleTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssignedEditor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="English_Lang_QualityID" Type="Int32" Nullable="false" />
+    <Property Name="Conclusion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" Nullable="false" />
+    <Property Name="TransferFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewerComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Abstarct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Precision="7" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="7" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityEndDate" Type="DateTime" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorAff" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="iThenticatePercentage" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HasTransferReport" Type="Boolean" />
+    <Property Name="Accurate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OverallAnalysisID" Type="Int32" />
+    <Property Name="IsAccurate" Type="Boolean" />
+    <Property Name="Comments_English_Lang_Quality" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Ethics_Compliance" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ParentManuscriptID" Type="Int32" />
+    <Property Name="RevisedDate" Type="DateTime" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="HandlingEditor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="JournalStatusID" Type="Int32" />
+    <Property Name="HistoryDateTime" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CrestId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JournalId" Type="Int32" Nullable="false" />
+    <Property Name="ArticleTypeId" Type="Int32" />
+    <Property Name="SectionId" Type="Int32" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArticleTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Precision="2" />
+    <Property Name="ServiceTypeStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ManuscriptStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ManuscriptFilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Revision" Type="Int32" />
+    <Property Name="SpecialInstruction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="2" />
+    <Property Name="DueDate" Type="DateTime" Precision="2" />
+    <Property Name="ReportSentDate" Type="DateTime" Precision="2" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="DeliveryAdviceID" Type="Int32" />
+    <Property Name="BackupDateTime" Type="DateTime" Precision="2" />
+    <Property Name="BackupPath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PriorityStatusId" Type="Int32" />
+    <Property Name="RevisionParentId" Type="Int32" />
+    <Property Name="CreatedUserID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="2" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="2" />
+    <Property Name="CreatedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TaskID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ManuscriptLoginDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CrestId" Type="Int32" Nullable="false" />
+    <Property Name="UserRoleId" Type="Int32" />
+    <Property Name="AssignedDate" Type="DateTime" Precision="2" />
+    <Property Name="FetchedDate" Type="DateTime" Precision="2" />
+    <Property Name="SubmitedDate" Type="DateTime" Precision="2" />
+    <Property Name="JobStatusId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceTypeStatusId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="JobProcessStatusId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="2" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="2" />
+  </EntityType>
+  <EntityType Name="MSReviewerErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MSReviewersSuggestionID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MSReviewerErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" Nullable="false" />
+    <Property Name="MSReviewerErrorCategoryHistoryID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MSReviewersSuggestionID" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsUncheckedByUser" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MSReviewerLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="Int32" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MSReviewersSuggestionInfo" Relationship="dbTransferDeskService_DevModel.FK_MSReviewerLink_MSReviewersSuggestionInfo" FromRole="MSReviewerLink" ToRole="MSReviewersSuggestionInfo" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTaskID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="JobType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ArticleTitle" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="JournalID" Type="Int32" />
+    <Property Name="AnalystUserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QualityUserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AnalystSubmissionDate" Type="DateTime" Precision="3" />
+    <Property Name="QualitySubmissionDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityStartDate" Type="DateTime" Precision="3" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="3" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="3" />
+    <Property Name="IsAccurate" Type="Boolean" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MSReviewersSuggestionInfoes" Relationship="dbTransferDeskService_DevModel.FK_MSReviewersSuggestionInfo_MSReviewersSuggestion" FromRole="MSReviewersSuggestion" ToRole="MSReviewersSuggestionInfo" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestionHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" Nullable="false" />
+    <Property Name="MSReviewersSuggestionHistoryID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SMTaskID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="JobType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ArticleTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="JournalID" Type="Int32" />
+    <Property Name="AnalystUserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="QualityUserID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AnalystSubmissionDate" Type="DateTime" Precision="3" />
+    <Property Name="QualitySubmissionDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="StartDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityStartDate" Type="DateTime" Precision="3" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="3" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="3" />
+    <Property Name="IsAccurate" Type="Boolean" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSReviewersSuggestionID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="InstitutionID" Type="Int32" />
+    <Property Name="DeptID" Type="Int32" />
+    <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="NoOfPublication" Type="Int32" />
+    <Property Name="IsAssign" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="AnalystSubmissionDate" Type="DateTime" Precision="3" />
+    <Property Name="IsAssociateCancel" Type="Boolean" />
+    <NavigationProperty Name="MSReviewerLinks" Relationship="dbTransferDeskService_DevModel.FK_MSReviewerLink_MSReviewersSuggestionInfo" FromRole="MSReviewersSuggestionInfo" ToRole="MSReviewerLink" />
+    <NavigationProperty Name="MSReviewersSuggestion" Relationship="dbTransferDeskService_DevModel.FK_MSReviewersSuggestionInfo_MSReviewersSuggestion" FromRole="MSReviewersSuggestionInfo" ToRole="MSReviewersSuggestion" />
+    <NavigationProperty Name="MSSAreaOfExpertises" Relationship="dbTransferDeskService_DevModel.FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo" FromRole="MSReviewersSuggestionInfo" ToRole="MSSAreaOfExpertise" />
+    <NavigationProperty Name="MSSReviewerMails" Relationship="dbTransferDeskService_DevModel.FK_MSSReviewerMail_MSReviewersSuggestionInfo" FromRole="MSReviewersSuggestionInfo" ToRole="MSSReviewerMail" />
+  </EntityType>
+  <EntityType Name="MSSAreaOfExpertise">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="Int32" />
+    <Property Name="AreaOfExpertice" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MSReviewersSuggestionInfo" Relationship="dbTransferDeskService_DevModel.FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo" FromRole="MSSAreaOfExpertise" ToRole="MSReviewersSuggestionInfo" />
+  </EntityType>
+  <EntityType Name="MSSReviewerMail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MSReviewersSuggestionInfo" Relationship="dbTransferDeskService_DevModel.FK_MSSReviewerMail_MSReviewersSuggestionInfo" FromRole="MSSReviewerMail" ToRole="MSReviewersSuggestionInfo" />
+  </EntityType>
+  <EntityType Name="OtherAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Affillation" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="ManuscriptID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtherAuthorHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HistoryID" Type="Int32" />
+    <Property Name="OtherAuthorID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Affillation" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="ManuscriptID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PageMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RoleToPages" Relationship="dbTransferDeskService_DevModel.FK_RoleToPage_PageMaster" FromRole="PageMaster" ToRole="RoleToPage" />
+  </EntityType>
+  <EntityType Name="ReferenceReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceLink" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_ReferenceReviewerlink_ReviewerMaster" FromRole="ReferenceReviewerlink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="ReviewerErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrorCategoryName" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ErrorWeightage" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReviewerMailLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_ReviewerMailLink_ReviewerMaster" FromRole="ReviewerMailLink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="ReviewerMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Initials" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReviewerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InstituteID" Type="Int32" />
+    <Property Name="DeptID" Type="Int32" />
+    <Property Name="NoOfPublication" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="OptOutCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AffillationReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_AffillationReviewerlink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="AffillationReviewerlink" />
+    <NavigationProperty Name="AreaOfExpReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_AreaOfExpReviewerlink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="AreaOfExpReviewerlink" />
+    <NavigationProperty Name="JournalReviewerLinks" Relationship="dbTransferDeskService_DevModel.FK_JournalReviewerLink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="JournalReviewerLink" />
+    <NavigationProperty Name="ReferenceReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_ReferenceReviewerlink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="ReferenceReviewerlink" />
+    <NavigationProperty Name="ReviewerMailLinks" Relationship="dbTransferDeskService_DevModel.FK_ReviewerMailLink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="ReviewerMailLink" />
+    <NavigationProperty Name="TitleReviewerlinks" Relationship="dbTransferDeskService_DevModel.FK_TitleReviewerlink_ReviewerMaster" FromRole="ReviewerMaster" ToRole="TitleReviewerlink" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RoleToPages" Relationship="dbTransferDeskService_DevModel.FK_RoleToPage_Role" FromRole="Role" ToRole="RoleToPage" />
+  </EntityType>
+  <EntityType Name="RoleToPage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PageID" Type="Int32" />
+    <NavigationProperty Name="PageMaster" Relationship="dbTransferDeskService_DevModel.FK_RoleToPage_PageMaster" FromRole="RoleToPage" ToRole="PageMaster" />
+    <NavigationProperty Name="Role" Relationship="dbTransferDeskService_DevModel.FK_RoleToPage_Role" FromRole="RoleToPage" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="SearchByMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SearchByName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Modify_dttm" Type="DateTime" Precision="3" />
+    <Property Name="ManuscriptType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SlidingScale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quality" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="QualityCheckedPercentage" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="ModifidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifidedDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <Property Name="StateName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="dbTransferDeskService_DevModel.FK_City_State" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="dbTransferDeskService_DevModel.FK_State_Country" FromRole="State" ToRole="Country" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SysMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TitleMaster">
+    <Key>
+      <PropertyRef Name="TitleID" />
+    </Key>
+    <Property Name="TitleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MScriptID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TitleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TitleReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TitleMasterID" Type="Int32" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ReviewerMaster" Relationship="dbTransferDeskService_DevModel.FK_TitleReviewerlink_ReviewerMaster" FromRole="TitleReviewerlink" ToRole="ReviewerMaster" />
+  </EntityType>
+  <EntityType Name="User_">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpID" Type="Int32" />
+    <Property Name="EmpUserID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmpPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" Nullable="false" />
+    <Property Name="RollID" Type="Int32" Nullable="false" />
+    <Property Name="DefaultRollID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="SlidingScaleId" Type="Int32" />
+    <Property Name="StatusTeamId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ArticleTypeAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ArticleTypeName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ArticleTypeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalTitle" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="JournalTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AliasName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsAliasActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Manuscript_Backup">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="MSID" />
+      <PropertyRef Name="ArticleTypeID" />
+      <PropertyRef Name="ArticleTitle" />
+      <PropertyRef Name="CorrespondingEditor" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="Crosscheck_iThenticateResultID" />
+      <PropertyRef Name="Highest_iThenticateFromSingleSrc" />
+      <PropertyRef Name="English_Lang_QualityID" />
+      <PropertyRef Name="Ethics_ComplianceID" />
+      <PropertyRef Name="InitialSubmissionDate" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CorrespondingAuthor" />
+      <PropertyRef Name="CorrespondingAuthorEmail" />
+      <PropertyRef Name="CorrespondingAuthorAff" />
+      <PropertyRef Name="OverallAnalysis" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="Int64" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="Int32" Nullable="false" />
+    <Property Name="SectionID" Type="Int32" />
+    <Property Name="ArticleTitle" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingEditor" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AssignedEditor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="English_Lang_QualityID" Type="Int32" Nullable="false" />
+    <Property Name="Conclusion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" Nullable="false" />
+    <Property Name="TransferFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewerComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Abstarct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="7" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityEndDate" Type="DateTime" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorAff" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="iThenticatePercentage" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HasTransferReport" Type="Boolean" />
+    <Property Name="Accurate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ManuscriptAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="MSID" />
+      <PropertyRef Name="ArticleTitle" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="Crosscheck_iThenticateResultID" />
+      <PropertyRef Name="Highest_iThenticateFromSingleSrc" />
+      <PropertyRef Name="English_Lang_QualityID" />
+      <PropertyRef Name="Ethics_ComplianceID" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CorrespondingAuthor" />
+      <PropertyRef Name="CorrespondingAuthorEmail" />
+      <PropertyRef Name="CorrespondingAuthorAff" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="JournalID" Type="Int32" Nullable="false" />
+    <Property Name="MSID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArticleTypeID" Type="Int32" />
+    <Property Name="SectionID" Type="Int32" />
+    <Property Name="ArticleTitle" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingEditor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AssignedEditor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="Int32" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="English_Lang_QualityID" Type="Int32" Nullable="false" />
+    <Property Name="Conclusion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethics_ComplianceID" Type="Int32" Nullable="false" />
+    <Property Name="TransferFrom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewerComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Abstarct" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InitialSubmissionDate" Type="DateTime" Precision="7" />
+    <Property Name="AssociateTAT" Type="DateTime" Precision="7" />
+    <Property Name="QualityCheck" Type="Boolean" />
+    <Property Name="QualityStartCheckDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityEndDate" Type="DateTime" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="DateTime" Precision="7" />
+    <Property Name="QualityTAT" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorEmail" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CorrespondingAuthorAff" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="iThenticatePercentage" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HasTransferReport" Type="Boolean" />
+    <Property Name="Accurate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QualityUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OverallAnalysisID" Type="Int32" />
+    <Property Name="IsAccurate" Type="Boolean" />
+    <Property Name="Comments_English_Lang_Quality" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Ethics_Compliance" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ParentManuscriptID" Type="Int32" />
+    <Property Name="RevisedDate" Type="DateTime" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsAssociateFinalSubmit" Type="Boolean" />
+    <Property Name="IsQualityFinalSubmit" Type="Boolean" />
+    <Property Name="HandlingEditor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="JournalStatusID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RoleAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SectionAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SectionName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SectionName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StatusCode" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="StatusCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserAdminAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="IsAdmin" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserAudit">
+    <Key>
+      <PropertyRef Name="EmpUserID" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" />
+    <Property Name="EmpID" Type="Int32" />
+    <Property Name="EmpUserID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmpPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserMasterSlidingRangeCount">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SlidingScale" />
+      <PropertyRef Name="RangeFrom" />
+      <PropertyRef Name="RangeTo" />
+      <PropertyRef Name="ManuscriptJobCount" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SlidingScale" Type="Int32" Nullable="false" />
+    <Property Name="RangeFrom" Type="Double" Nullable="false" />
+    <Property Name="RangeTo" Type="Decimal" Nullable="false" Precision="2" Scale="1" />
+    <Property Name="ManuscriptJobCount" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="7" />
+    <Property Name="ModifiedBy" Type="Binary" MaxLength="20" FixedLength="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserRolesAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ServiceTypeId" />
+      <PropertyRef Name="RollID" />
+      <PropertyRef Name="DefaultRollID" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceTypeId" Type="Int32" Nullable="false" />
+    <Property Name="RollID" Type="Int32" Nullable="false" />
+    <Property Name="DefaultRollID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="SlidingScaleId" Type="Int32" />
+    <Property Name="StatusTeamId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_AffillationReviewerlink_AffillationMaster">
+    <End Type="dbTransferDeskService_DevModel.AffillationMaster" Role="AffillationMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.AffillationReviewerlink" Role="AffillationReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AffillationMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AffillationReviewerlink">
+        <PropertyRef Name="AffillationMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AffillationReviewerlink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.AffillationReviewerlink" Role="AffillationReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AffillationReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster">
+    <End Type="dbTransferDeskService_DevModel.AreaOfExpertiseMaster" Role="AreaOfExpertiseMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.AreaOfExpertiseMaster" Role="AreaOfExpertiseMaster1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AreaOfExpertiseMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpertiseMaster1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster">
+    <End Type="dbTransferDeskService_DevModel.AreaOfExpertiseMaster" Role="AreaOfExpertiseMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.AreaOfExpReviewerlink" Role="AreaOfExpReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaOfExpertiseMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpReviewerlink">
+        <PropertyRef Name="AreaOfExpertiseMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpReviewerlink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.AreaOfExpReviewerlink" Role="AreaOfExpReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_State">
+    <End Type="dbTransferDeskService_DevModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="dbTransferDeskService_DevModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_Country">
+    <End Type="dbTransferDeskService_DevModel.Country" Role="Country" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.State" Role="State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JournalID">
+    <End Type="dbTransferDeskService_DevModel.JournalArticleType" Role="JournalArticleType" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.JournalArticleType" Role="JournalArticleType1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="JournalArticleType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JournalArticleType1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JournalReviewerLink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.JournalReviewerLink" Role="JournalReviewerLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JournalReviewerLink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSReviewerLink_MSReviewersSuggestionInfo">
+    <End Type="dbTransferDeskService_DevModel.MSReviewersSuggestionInfo" Role="MSReviewersSuggestionInfo" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.MSReviewerLink" Role="MSReviewerLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSReviewerLink">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSReviewersSuggestionInfo_MSReviewersSuggestion">
+    <End Type="dbTransferDeskService_DevModel.MSReviewersSuggestion" Role="MSReviewersSuggestion" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.MSReviewersSuggestionInfo" Role="MSReviewersSuggestionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="MSReviewersSuggestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo">
+    <End Type="dbTransferDeskService_DevModel.MSReviewersSuggestionInfo" Role="MSReviewersSuggestionInfo" Multiplicity="0..1" />
+    <End Type="dbTransferDeskService_DevModel.MSSAreaOfExpertise" Role="MSSAreaOfExpertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSSAreaOfExpertise">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSSReviewerMail_MSReviewersSuggestionInfo">
+    <End Type="dbTransferDeskService_DevModel.MSReviewersSuggestionInfo" Role="MSReviewersSuggestionInfo" Multiplicity="0..1" />
+    <End Type="dbTransferDeskService_DevModel.MSSReviewerMail" Role="MSSReviewerMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSSReviewerMail">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToPage_PageMaster">
+    <End Type="dbTransferDeskService_DevModel.PageMaster" Role="PageMaster" Multiplicity="0..1" />
+    <End Type="dbTransferDeskService_DevModel.RoleToPage" Role="RoleToPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleToPage">
+        <PropertyRef Name="PageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReferenceReviewerlink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.ReferenceReviewerlink" Role="ReferenceReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReferenceReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReviewerMailLink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.ReviewerMailLink" Role="ReviewerMailLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReviewerMailLink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TitleReviewerlink_ReviewerMaster">
+    <End Type="dbTransferDeskService_DevModel.ReviewerMaster" Role="ReviewerMaster" Multiplicity="1" />
+    <End Type="dbTransferDeskService_DevModel.TitleReviewerlink" Role="TitleReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TitleReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToPage_Role">
+    <End Type="dbTransferDeskService_DevModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="dbTransferDeskService_DevModel.RoleToPage" Role="RoleToPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleToPage">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

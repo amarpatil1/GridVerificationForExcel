@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbTransferDeskService_DevModelStoreContainer" CdmEntityContainer="dbTransferDeskService_DevEntities1">
+    <FunctionImportMapping FunctionImportName="GetLinkInstitutesDataFromGrid" FunctionName="dbTransferDeskService_DevModel.Store.GetLinkInstitutesDataFromGrid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbTransferDeskService_DevModel.GetLinkInstitutesDataFromGrid_Result">
+          <ScalarProperty Name="grid_id" ColumnName="grid_id" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="wikipedia_url" ColumnName="wikipedia_url" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="Newlink" ColumnName="Newlink" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pr_GetDomainList" FunctionName="dbTransferDeskService_DevModel.Store.pr_GetDomainList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbTransferDeskService_DevModel.pr_GetDomainList_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DomainName" ColumnName="DomainName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

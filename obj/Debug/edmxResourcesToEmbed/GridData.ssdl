@@ -1,0 +1,2120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTransferDeskService_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AffillationMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AffillationReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AffillationMasterID" Type="int" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.AOE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AOE">
+          <Property Name="CLASS" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="AreaOfExpertiseMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ExpertiseLevel" Type="int" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AreaOfExpReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaOfExpertiseMasterID" Type="int" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ArticleType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArticleTypeName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.ArticleTypeAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ArticleTypeAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ArticleTypeName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ArticleTypeName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AutoLoginEmailsForMSJournals">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" />
+    <Property Name="ArticleTypeID" Type="int" />
+    <Property Name="MSID" Type="varchar" MaxLength="50" />
+    <Property Name="ArticleTitle" Type="varchar(max)" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="7" />
+    <Property Name="AdditionalComments" Type="varchar(max)" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" />
+    <Property Name="FromMail" Type="varchar" MaxLength="1000" />
+    <Property Name="ToMail" Type="varchar" MaxLength="1000" />
+    <Property Name="CCMail" Type="varchar" MaxLength="1000" />
+    <Property Name="BCCMail" Type="varchar" MaxLength="1000" />
+    <Property Name="MailBody" Type="varchar(max)" />
+    <Property Name="EmailHtmlBody" Type="varchar(max)" />
+    <Property Name="EmailImportance" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ErrorDescription" Type="varchar(max)" />
+    <Property Name="MailReceivedDate" Type="datetime2" Precision="7" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.BMCSeries' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BMCSeries">
+          <Property Name="SrNo" Type="float" />
+          <Property Name="Primary" Type="nvarchar" MaxLength="255" />
+          <Property Name="Secondary" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tertiary" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="BookMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookTitle" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="GPUInformation" Type="varchar" MaxLength="200" />
+    <Property Name="FTPLink" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BookUserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookMasterId" Type="int" Nullable="false" />
+    <Property Name="UserRolesId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="500" />
+    <Property Name="StateId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.CleanCity' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CleanCity">
+          <Property Name="AffillationMasterID" Type="float" />
+          <Property Name="ReviewerMasterID" Type="float" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="University" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Street" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cleanup Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.CleanData' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CleanData">
+          <Property Name="AffillationMasterID" Type="float" />
+          <Property Name="ReviewerMasterID" Type="float" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="University" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="Street" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cleanup Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="CountryCode" Type="varchar" MaxLength="500" />
+    <Property Name="CountryName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.Data' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Data">
+          <Property Name="ID" Type="float" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Affiliation" Type="nvarchar" MaxLength="255" />
+          <Property Name="emailaddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Area of expertise" Type="nvarchar" MaxLength="255" />
+          <Property Name="Reference link" Type="nvarchar(max)" />
+          <Property Name="Number of relevant publications" Type="float" />
+          <Property Name="MSID" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.Data1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Data1">
+          <Property Name="ID" Type="int" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="ReviewerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Affiliation" Type="nvarchar" MaxLength="255" />
+          <Property Name="emailaddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Area of expertise" Type="nvarchar" MaxLength="255" />
+          <Property Name="Reference link" Type="nvarchar(max)" />
+          <Property Name="Number of relevant publications" Type="float" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="MSID" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.Data2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Data2">
+          <Property Name="ID" Type="float" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewerName" Type="varchar(max)" />
+          <Property Name="Affiliation" Type="nvarchar" MaxLength="255" />
+          <Property Name="emailaddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="Areaofexpertise" Type="nvarchar" MaxLength="255" />
+          <Property Name="Referencelink" Type="nvarchar(max)" />
+          <Property Name="Numberofrelevantpublications" Type="float" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="DepartmentMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EmailDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSID" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="From" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="To" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="Body" Type="text" Nullable="false" />
+    <Property Name="CC" Type="nvarchar" MaxLength="1000" />
+    <Property Name="BCC" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="SendDateTime" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="EmpName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LeftDate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="AlternateEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="ApplicationFlag" Type="bit" />
+    <Property Name="ReportFlag" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrorCategoryName" Type="varchar" MaxLength="5000" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="ManuscriptType" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.GeoCity1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="GeoCity1">
+          <Property Name="Institution_ID" Type="float" />
+          <Property Name="Institution_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Institution_City" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.grid.[labels' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="grid_[labels">
+          <Property Name="grid_id" Type="varchar(max)" />
+          <Property Name="iso639" Type="varchar(max)" />
+          <Property Name="label" Type="varchar(max)" />
+        </EntityType>-->
+  <EntityType Name="Grid_Link">
+    <Key>
+      <PropertyRef Name="LinkId" />
+    </Key>
+    <Property Name="LinkId" Type="int" Nullable="false" />
+    <Property Name="GridId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Link" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.gridUNI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="gridUNI">
+          <Property Name="ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowDatetime" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageDropDownList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageDropDownMenuID" Type="int" Nullable="false" />
+    <Property Name="DropDownText" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Modify_dttm" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ImageDropDownMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DropDownMenu" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Modify_dttm" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ImpersonateCredential ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServerUserName" Type="varchar" MaxLength="50" />
+    <Property Name="Domain" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="InstituteMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Journal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalTitle" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="200" />
+    <Property Name="AliasName" Type="varchar" MaxLength="50" />
+    <Property Name="IsAliasActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="JournalArticleTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.JournalAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="JournalAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalTitle" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="JournalTitle" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="200" />
+    <Property Name="AliasName" Type="varchar" MaxLength="50" />
+    <Property Name="IsAliasActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="JournalLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Journal name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Links" Type="nvarchar" MaxLength="255" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalReviewerLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JournalSections">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="SectionID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JournalUserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalMasterId" Type="int" Nullable="false" />
+    <Property Name="UserRolesId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.links' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="links">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="link" Type="varchar" MaxLength="500" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.Loc' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Loc">
+          <Property Name="OID" Type="float" />
+          <Property Name="ID" Type="float" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Locationtype" Type="float" />
+          <Property Name="Isvisible" Type="float" />
+          <Property Name="Parentid" Type="float" />
+        </EntityType>-->
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Locationtype" Type="int" />
+    <Property Name="Isvisible" Type="int" />
+    <Property Name="Parentid" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.ManualUpdatedRData' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ManualUpdatedRData">
+          <Property Name="ID" Type="float" />
+          <Property Name="reviewerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Referance Link" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="Manuscript">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="int" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="ArticleTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CorrespondingEditor" Type="nvarchar(max)" />
+    <Property Name="AssignedEditor" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="English_Lang_QualityID" Type="int" Nullable="false" />
+    <Property Name="Conclusion" Type="nvarchar(max)" />
+    <Property Name="Ethics_ComplianceID" Type="int" Nullable="false" />
+    <Property Name="TransferFrom" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReviewerComments" Type="nvarchar(max)" />
+    <Property Name="Abstarct" Type="nvarchar(max)" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="7" />
+    <Property Name="AssociateTAT" Type="datetime2" Precision="7" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityEndDate" Type="datetime2" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityTAT" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iThenticatePercentage" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="nvarchar" MaxLength="200" />
+    <Property Name="HasTransferReport" Type="bit" />
+    <Property Name="Accurate" Type="nvarchar" MaxLength="200" />
+    <Property Name="ErrorDescription" Type="nvarchar(max)" />
+    <Property Name="QualityUserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OverallAnalysisID" Type="int" />
+    <Property Name="IsAccurate" Type="bit" />
+    <Property Name="Comments_English_Lang_Quality" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Ethics_Compliance" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ParentManuscriptID" Type="int" />
+    <Property Name="RevisedDate" Type="datetime2" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="HandlingEditor" Type="nvarchar" MaxLength="200" />
+    <Property Name="JournalStatusID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.Manuscript_Backup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Manuscript_Backup">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="MSID" />
+      <PropertyRef Name="ArticleTypeID" />
+      <PropertyRef Name="ArticleTitle" />
+      <PropertyRef Name="CorrespondingEditor" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="Crosscheck_iThenticateResultID" />
+      <PropertyRef Name="Highest_iThenticateFromSingleSrc" />
+      <PropertyRef Name="English_Lang_QualityID" />
+      <PropertyRef Name="Ethics_ComplianceID" />
+      <PropertyRef Name="InitialSubmissionDate" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CorrespondingAuthor" />
+      <PropertyRef Name="CorrespondingAuthorEmail" />
+      <PropertyRef Name="CorrespondingAuthorAff" />
+      <PropertyRef Name="OverallAnalysis" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="bigint" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="int" Nullable="false" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="ArticleTitle" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="CorrespondingEditor" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AssignedEditor" Type="nvarchar" MaxLength="200" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="English_Lang_QualityID" Type="int" Nullable="false" />
+    <Property Name="Conclusion" Type="nvarchar(max)" />
+    <Property Name="Ethics_ComplianceID" Type="int" Nullable="false" />
+    <Property Name="TransferFrom" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReviewerComments" Type="nvarchar(max)" />
+    <Property Name="Abstarct" Type="nvarchar(max)" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="AssociateTAT" Type="datetime2" Precision="7" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityEndDate" Type="datetime2" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityTAT" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="iThenticatePercentage" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="HasTransferReport" Type="bit" />
+    <Property Name="Accurate" Type="nvarchar" MaxLength="200" />
+    <Property Name="ErrorDescription" Type="nvarchar(max)" />
+    <Property Name="QualityUserID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.ManuscriptAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ManuscriptAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="JournalID" />
+      <PropertyRef Name="MSID" />
+      <PropertyRef Name="ArticleTitle" />
+      <PropertyRef Name="StartDate" />
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="Crosscheck_iThenticateResultID" />
+      <PropertyRef Name="Highest_iThenticateFromSingleSrc" />
+      <PropertyRef Name="English_Lang_QualityID" />
+      <PropertyRef Name="Ethics_ComplianceID" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CorrespondingAuthor" />
+      <PropertyRef Name="CorrespondingAuthorEmail" />
+      <PropertyRef Name="CorrespondingAuthorAff" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="int" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="ArticleTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CorrespondingEditor" Type="nvarchar(max)" />
+    <Property Name="AssignedEditor" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="English_Lang_QualityID" Type="int" Nullable="false" />
+    <Property Name="Conclusion" Type="nvarchar(max)" />
+    <Property Name="Ethics_ComplianceID" Type="int" Nullable="false" />
+    <Property Name="TransferFrom" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReviewerComments" Type="nvarchar(max)" />
+    <Property Name="Abstarct" Type="nvarchar(max)" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="7" />
+    <Property Name="AssociateTAT" Type="datetime2" Precision="7" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityEndDate" Type="datetime2" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityTAT" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iThenticatePercentage" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="nvarchar" MaxLength="200" />
+    <Property Name="HasTransferReport" Type="bit" />
+    <Property Name="Accurate" Type="nvarchar" MaxLength="200" />
+    <Property Name="ErrorDescription" Type="nvarchar(max)" />
+    <Property Name="QualityUserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OverallAnalysisID" Type="int" />
+    <Property Name="IsAccurate" Type="bit" />
+    <Property Name="Comments_English_Lang_Quality" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Ethics_Compliance" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ParentManuscriptID" Type="int" />
+    <Property Name="RevisedDate" Type="datetime2" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="HandlingEditor" Type="nvarchar" MaxLength="200" />
+    <Property Name="JournalStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManuscriptBookScreeningID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="IsUncheckedByUser" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" Nullable="false" />
+    <Property Name="ManuscriptBookErrorCategoryHistoryID" Type="int" Nullable="false" />
+    <Property Name="ManuscriptBookScreeningID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="IsUncheckedByUser" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CrestID" Type="varchar" MaxLength="20" />
+    <Property Name="BookMasterID" Type="int" Nullable="false" />
+    <Property Name="ServiceTypeID" Type="int" Nullable="false" />
+    <Property Name="StatusMasterTaskID" Type="int" />
+    <Property Name="ChapterNumber" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ChapterTitle" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PageCount" Type="int" Nullable="false" />
+    <Property Name="ReceivedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="RequesterName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpecialInstruction" Type="varchar" MaxLength="1000" />
+    <Property Name="Revision" Type="int" />
+    <Property Name="RevisionParentID" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ModifidedDate" Type="datetime2" Precision="7" />
+    <Property Name="ModifidedBy" Type="varchar" MaxLength="10" />
+    <Property Name="ManuscriptStatusID" Type="int" Nullable="false" />
+    <Property Name="ShareDrivePath" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookLoginDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManuscriptBookLoginId" Type="int" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" />
+    <Property Name="AssignedDate" Type="datetime2" Precision="2" />
+    <Property Name="FetchedDate" Type="datetime2" Precision="2" />
+    <Property Name="SubmitedDate" Type="datetime2" Precision="2" />
+    <Property Name="JobStatusId" Type="int" Nullable="false" />
+    <Property Name="ServiceTypeStatusId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="JobProcessStatusId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="2" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="2" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookScreening">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookLoginID" Type="int" Nullable="false" />
+    <Property Name="RollID" Type="int" />
+    <Property Name="OverallAnalysisID" Type="int" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="int" />
+    <Property Name="English_Lang_QualityID" Type="int" />
+    <Property Name="Ethics_ComplianceID" Type="int" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="CorrespondingAuthor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="varchar" MaxLength="600" />
+    <Property Name="iThenticatePercentage" Type="int" />
+    <Property Name="Accurate" Type="bit" />
+    <Property Name="ErrorDescription" Type="varchar(max)" />
+    <Property Name="Comments_English_Lang_Quality" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_Ethics_Compliance" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_OverallAnalysis" Type="varchar" MaxLength="2000" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifidedDate" Type="datetime2" Precision="7" />
+    <Property Name="ModifidedBy" Type="varchar" MaxLength="20" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityUserID" Type="varchar" MaxLength="50" />
+    <Property Name="AssociateUserID" Type="varchar" MaxLength="50" />
+    <Property Name="AssociateFinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityFinalSubmitDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptBookScreeningHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" Nullable="false" />
+    <Property Name="ManuscriptBookScreeningHistoryID" Type="int" Nullable="false" />
+    <Property Name="BookLoginID" Type="int" Nullable="false" />
+    <Property Name="RollID" Type="int" />
+    <Property Name="OverallAnalysisID" Type="int" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="int" />
+    <Property Name="English_Lang_QualityID" Type="int" />
+    <Property Name="Ethics_ComplianceID" Type="int" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="CorrespondingAuthor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="varchar" MaxLength="600" />
+    <Property Name="iThenticatePercentage" Type="int" />
+    <Property Name="Accurate" Type="bit" />
+    <Property Name="ErrorDescription" Type="varchar(max)" />
+    <Property Name="Comments_English_Lang_Quality" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_Ethics_Compliance" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="varchar" MaxLength="2000" />
+    <Property Name="Comments_OverallAnalysis" Type="varchar" MaxLength="2000" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifidedDate" Type="datetime2" Precision="7" />
+    <Property Name="ModifidedBy" Type="varchar" MaxLength="20" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityUserID" Type="varchar" MaxLength="50" />
+    <Property Name="AssociateUserID" Type="varchar" MaxLength="50" />
+    <Property Name="AssociateFinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityFinalSubmitDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptErrorCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ManuscriptID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="IsUncheckedByUser" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManuscriptErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" />
+    <Property Name="ManuscriptErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ManuscriptID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="IsUncheckedByUser" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ManuscriptHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" />
+    <Property Name="ManuscriptID" Type="int" Nullable="false" />
+    <Property Name="JournalID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArticleTypeID" Type="int" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="ArticleTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CorrespondingEditor" Type="nvarchar(max)" />
+    <Property Name="AssignedEditor" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Crosscheck_iThenticateResultID" Type="int" Nullable="false" />
+    <Property Name="Highest_iThenticateFromSingleSrc" Type="decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="English_Lang_QualityID" Type="int" Nullable="false" />
+    <Property Name="Conclusion" Type="nvarchar(max)" />
+    <Property Name="Ethics_ComplianceID" Type="int" Nullable="false" />
+    <Property Name="TransferFrom" Type="nvarchar" MaxLength="200" />
+    <Property Name="ReviewerComments" Type="nvarchar(max)" />
+    <Property Name="Abstarct" Type="nvarchar(max)" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="7" />
+    <Property Name="AssociateTAT" Type="datetime2" Precision="7" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="QualityStartCheckDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityEndDate" Type="datetime2" Precision="7" />
+    <Property Name="FinalSubmitDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityTAT" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="CorrespondingAuthor" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorEmail" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CorrespondingAuthorAff" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iThenticatePercentage" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="OverallAnalysis" Type="nvarchar" MaxLength="200" />
+    <Property Name="HasTransferReport" Type="bit" />
+    <Property Name="Accurate" Type="nvarchar" MaxLength="200" />
+    <Property Name="ErrorDescription" Type="nvarchar(max)" />
+    <Property Name="QualityUserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="OverallAnalysisID" Type="int" />
+    <Property Name="IsAccurate" Type="bit" />
+    <Property Name="Comments_English_Lang_Quality" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Ethics_Compliance" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Comments_Crosscheck_iThenticateResult" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ParentManuscriptID" Type="int" />
+    <Property Name="RevisedDate" Type="datetime2" Precision="7" />
+    <Property Name="Comments_OverallAnalysis" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="HandlingEditor" Type="nvarchar" MaxLength="200" />
+    <Property Name="JournalStatusID" Type="int" />
+    <Property Name="HistoryDateTime" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="ManuscriptLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CrestId" Type="varchar" MaxLength="50" />
+    <Property Name="JournalId" Type="int" Nullable="false" />
+    <Property Name="ArticleTypeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="MSID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArticleTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InitialSubmissionDate" Type="datetime2" Precision="2" />
+    <Property Name="ServiceTypeStatusId" Type="int" Nullable="false" />
+    <Property Name="ManuscriptStatusId" Type="int" Nullable="false" />
+    <Property Name="ManuscriptFilePath" Type="varchar" MaxLength="200" />
+    <Property Name="Revision" Type="int" />
+    <Property Name="SpecialInstruction" Type="nvarchar(max)" />
+    <Property Name="ReceivedDate" Type="datetime2" Precision="2" />
+    <Property Name="DueDate" Type="datetime2" Precision="2" />
+    <Property Name="ReportSentDate" Type="datetime2" Precision="2" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="DeliveryAdviceID" Type="int" />
+    <Property Name="BackupDateTime" Type="datetime2" Precision="2" />
+    <Property Name="BackupPath" Type="varchar" MaxLength="200" />
+    <Property Name="PriorityStatusId" Type="int" />
+    <Property Name="RevisionParentId" Type="int" />
+    <Property Name="CreatedUserID" Type="varchar" MaxLength="15" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="2" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="2" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="15" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="15" />
+    <Property Name="TaskID" Type="int" />
+  </EntityType>
+  <EntityType Name="ManuscriptLoginDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CrestId" Type="int" Nullable="false" />
+    <Property Name="UserRoleId" Type="int" />
+    <Property Name="AssignedDate" Type="datetime2" Precision="2" />
+    <Property Name="FetchedDate" Type="datetime2" Precision="2" />
+    <Property Name="SubmitedDate" Type="datetime2" Precision="2" />
+    <Property Name="JobStatusId" Type="int" Nullable="false" />
+    <Property Name="ServiceTypeStatusId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="JobProcessStatusId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="2" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="2" />
+  </EntityType>
+  <EntityType Name="MSReviewerErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSID" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="MSReviewersSuggestionID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsUncheckedByUser" Type="bit" />
+  </EntityType>
+  <EntityType Name="MSReviewerErrorCategoryHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" Nullable="false" />
+    <Property Name="MSReviewerErrorCategoryHistoryID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="MSReviewersSuggestionID" Type="int" Nullable="false" />
+    <Property Name="ErrorCategoryID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsUncheckedByUser" Type="bit" />
+  </EntityType>
+  <EntityType Name="MSReviewerLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="int" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTaskID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="JobType" Type="char" MaxLength="1" />
+    <Property Name="ArticleTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="JournalID" Type="int" />
+    <Property Name="AnalystUserID" Type="varchar" MaxLength="20" />
+    <Property Name="QualityUserID" Type="varchar" MaxLength="20" />
+    <Property Name="AnalystSubmissionDate" Type="datetime" />
+    <Property Name="QualitySubmissionDate" Type="datetime" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityStartDate" Type="datetime" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="AssociateTAT" Type="datetime" />
+    <Property Name="QualityTAT" Type="datetime" />
+    <Property Name="IsAccurate" Type="bit" />
+    <Property Name="ErrorDescription" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestionHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" Nullable="false" />
+    <Property Name="MSReviewersSuggestionHistoryID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMTaskID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="JobType" Type="char" MaxLength="1" />
+    <Property Name="ArticleTitle" Type="varchar" MaxLength="500" />
+    <Property Name="JournalID" Type="int" />
+    <Property Name="AnalystUserID" Type="varchar" MaxLength="20" />
+    <Property Name="QualityUserID" Type="varchar" MaxLength="20" />
+    <Property Name="AnalystSubmissionDate" Type="datetime" />
+    <Property Name="QualitySubmissionDate" Type="datetime" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="IsQualityFinalSubmit" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="StartDate" Type="datetime2" Precision="7" />
+    <Property Name="QualityStartDate" Type="datetime" />
+    <Property Name="QualityCheck" Type="bit" />
+    <Property Name="AssociateTAT" Type="datetime" />
+    <Property Name="QualityTAT" Type="datetime" />
+    <Property Name="IsAccurate" Type="bit" />
+    <Property Name="ErrorDescription" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MSReviewersSuggestionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSReviewersSuggestionID" Type="int" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="InstitutionID" Type="int" />
+    <Property Name="DeptID" Type="int" />
+    <Property Name="StreetName" Type="varchar" MaxLength="100" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="NoOfPublication" Type="int" />
+    <Property Name="IsAssign" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsAssociateFinalSubmit" Type="bit" />
+    <Property Name="AnalystSubmissionDate" Type="datetime" />
+    <Property Name="IsAssociateCancel" Type="bit" />
+  </EntityType>
+  <EntityType Name="MSSAreaOfExpertise">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="int" />
+    <Property Name="AreaOfExpertice" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="MSSReviewerMail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSReviewersSuggestionInfoID" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.NewRName' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="NewRName">
+          <Property Name="ID" Type="float" />
+          <Property Name="ReviewerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="OtherAuthor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Affillation" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ManuscriptID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OtherAuthorHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HistoryID" Type="int" />
+    <Property Name="OtherAuthorID" Type="int" Nullable="false" />
+    <Property Name="MSID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Affillation" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime2" Precision="7" />
+    <Property Name="ManuscriptID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PageMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReferenceReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferenceLink" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReviewerErrorCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrorCategoryName" Type="varchar" MaxLength="5000" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="ErrorWeightage" Type="int" />
+  </EntityType>
+  <EntityType Name="ReviewerMailLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReviewerMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Initials" Type="varchar" MaxLength="10" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="emailaddress" Type="varchar(max)" />
+    <Property Name="ReviewerName" Type="varchar(max)" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="StreetName" Type="varchar" MaxLength="100" />
+    <Property Name="InstituteID" Type="int" />
+    <Property Name="DeptID" Type="int" />
+    <Property Name="NoOfPublication" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="OptOutCode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.Reviewers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Reviewers">
+          <Property Name="ID" Type="float" />
+          <Property Name="ReviewerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.RoleAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RoleAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RoleName" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RoleToPage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="PageID" Type="int" />
+  </EntityType>
+  <EntityType Name="SearchByMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SearchByName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Modify_dttm" Type="datetime" />
+    <Property Name="ManuscriptType" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.SectionAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SectionAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SectionName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SectionName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SlidingScale">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quality" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="QualityCheckedPercentage" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceTypeID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="ModifidedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifidedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="500" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.StatusMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StatusMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StatusCode" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="StatusCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="SysMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TitleMaster">
+    <Key>
+      <PropertyRef Name="TitleID" />
+    </Key>
+    <Property Name="TitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MScriptID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="TitleName" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TitleReviewerlink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleMasterID" Type="int" Nullable="false" />
+    <Property Name="ReviewerMasterID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.dbo.UniCity' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UniCity">
+          <Property Name="INSTNM" Type="nvarchar" MaxLength="255" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="User_">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="EmpUserID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmpPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.UserAdminAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserAdminAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="IsAdmin" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.UserAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserAudit">
+    <Key>
+      <PropertyRef Name="EmpUserID" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="EmpUserID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmpPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.UserMasterSlidingRangeCount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserMasterSlidingRangeCount">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SlidingScale" />
+      <PropertyRef Name="RangeFrom" />
+      <PropertyRef Name="RangeTo" />
+      <PropertyRef Name="ManuscriptJobCount" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SlidingScale" Type="int" Nullable="false" />
+    <Property Name="RangeFrom" Type="float" Nullable="false" />
+    <Property Name="RangeTo" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+    <Property Name="ManuscriptJobCount" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="ModifiedBy" Type="varbinary" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceTypeId" Type="int" Nullable="false" />
+    <Property Name="RollID" Type="int" Nullable="false" />
+    <Property Name="DefaultRollID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="SlidingScaleId" Type="int" />
+    <Property Name="StatusTeamId" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbTransferDeskService_Dev.dbo.UserRolesAudit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserRolesAudit">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ServiceTypeId" />
+      <PropertyRef Name="RollID" />
+      <PropertyRef Name="DefaultRollID" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceTypeId" Type="int" Nullable="false" />
+    <Property Name="RollID" Type="int" Nullable="false" />
+    <Property Name="DefaultRollID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="SlidingScaleId" Type="int" />
+    <Property Name="StatusTeamId" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ModifiedDateTime" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.Acronyms' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Acronyms">
+          <Property Name="grid_id" Type="varchar" MaxLength="500" />
+          <Property Name="acronym" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.addresses' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="addresses">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="line_1" Type="varchar" MaxLength="500" />
+          <Property Name="line_2" Type="varchar" MaxLength="500" />
+          <Property Name="line_3" Type="varchar" MaxLength="500" />
+          <Property Name="lat" Type="varchar" MaxLength="500" />
+          <Property Name="lng" Type="varchar" MaxLength="500" />
+          <Property Name="postcode" Type="varchar" MaxLength="50" />
+          <Property Name="primary" Type="varchar" MaxLength="500" />
+          <Property Name="city" Type="varchar" MaxLength="500" />
+          <Property Name="state" Type="varchar" MaxLength="500" />
+          <Property Name="state_code" Type="varchar" MaxLength="500" />
+          <Property Name="country" Type="varchar" MaxLength="500" />
+          <Property Name="country_code" Type="varchar" MaxLength="50" />
+          <Property Name="geonames_city_id" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.aliases' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="aliases">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="alias" Type="varchar" MaxLength="1000" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.external_ids' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="external_ids">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="external_id_type" Type="varchar" MaxLength="50" />
+          <Property Name="external_id" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.geonames' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="geonames">
+          <Property Name="geonames_city_id" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level1_code" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level1_name" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level1_ascii_name" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level2_code" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level2_name" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level2_ascii_name" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level3_code" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level3_name" Type="varchar" MaxLength="500" />
+          <Property Name="nuts_level3_ascii_name" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin1_code" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin1_name" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin1_ascii_name" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin2_code" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin2_name" Type="varchar" MaxLength="500" />
+          <Property Name="geonames_admin2_ascii_name" Type="varchar" MaxLength="500" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.institutes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="institutes">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="wikipedia_url" Type="varchar" MaxLength="500" />
+          <Property Name="email_address" Type="varchar" MaxLength="500" />
+          <Property Name="established" Type="varchar" MaxLength="500" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.labels' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="labels">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="iso639" Type="varchar" MaxLength="50" />
+          <Property Name="label" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.links' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="links1">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="link" Type="varchar" MaxLength="1000" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.relationships' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="relationships">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="relationship_type" Type="varchar" MaxLength="50" />
+          <Property Name="related_grid_id" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'dbTransferDeskService_Dev.grid.types' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="types">
+          <Property Name="grid_id" Type="varchar" MaxLength="50" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <Association Name="FK_AffillationReviewerlink_AffillationMaster">
+    <End Role="AffillationMaster" Type="Self.AffillationMaster" Multiplicity="1" />
+    <End Role="AffillationReviewerlink" Type="Self.AffillationReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AffillationMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AffillationReviewerlink">
+        <PropertyRef Name="AffillationMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AffillationReviewerlink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="AffillationReviewerlink" Type="Self.AffillationReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AffillationReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster">
+    <End Role="AreaOfExpertiseMaster" Type="Self.AreaOfExpertiseMaster" Multiplicity="1" />
+    <End Role="AreaOfExpertiseMaster1" Type="Self.AreaOfExpertiseMaster" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AreaOfExpertiseMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpertiseMaster1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster">
+    <End Role="AreaOfExpertiseMaster" Type="Self.AreaOfExpertiseMaster" Multiplicity="1" />
+    <End Role="AreaOfExpReviewerlink" Type="Self.AreaOfExpReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaOfExpertiseMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpReviewerlink">
+        <PropertyRef Name="AreaOfExpertiseMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AreaOfExpReviewerlink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="AreaOfExpReviewerlink" Type="Self.AreaOfExpReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AreaOfExpReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_State">
+    <End Role="State" Type="Self.State" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JournalID">
+    <End Role="JournalArticleTypes" Type="Self.JournalArticleTypes" Multiplicity="1" />
+    <End Role="JournalArticleTypes1" Type="Self.JournalArticleTypes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="JournalArticleTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JournalArticleTypes1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JournalReviewerLink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="JournalReviewerLink" Type="Self.JournalReviewerLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="JournalReviewerLink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSReviewerLink_MSReviewersSuggestionInfo">
+    <End Role="MSReviewersSuggestionInfo" Type="Self.MSReviewersSuggestionInfo" Multiplicity="1" />
+    <End Role="MSReviewerLink" Type="Self.MSReviewerLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSReviewerLink">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSReviewersSuggestionInfo_MSReviewersSuggestion">
+    <End Role="MSReviewersSuggestion" Type="Self.MSReviewersSuggestion" Multiplicity="1" />
+    <End Role="MSReviewersSuggestionInfo" Type="Self.MSReviewersSuggestionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestion">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="MSReviewersSuggestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo">
+    <End Role="MSReviewersSuggestionInfo" Type="Self.MSReviewersSuggestionInfo" Multiplicity="0..1" />
+    <End Role="MSSAreaOfExpertise" Type="Self.MSSAreaOfExpertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSSAreaOfExpertise">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSSReviewerMail_MSReviewersSuggestionInfo">
+    <End Role="MSReviewersSuggestionInfo" Type="Self.MSReviewersSuggestionInfo" Multiplicity="0..1" />
+    <End Role="MSSReviewerMail" Type="Self.MSSReviewerMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MSReviewersSuggestionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MSSReviewerMail">
+        <PropertyRef Name="MSReviewersSuggestionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReferenceReviewerlink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="ReferenceReviewerlink" Type="Self.ReferenceReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReferenceReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReviewerMailLink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="ReviewerMailLink" Type="Self.ReviewerMailLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ReviewerMailLink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToPage_PageMaster">
+    <End Role="PageMaster" Type="Self.PageMaster" Multiplicity="0..1" />
+    <End Role="RoleToPage" Type="Self.RoleToPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleToPage">
+        <PropertyRef Name="PageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleToPage_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="RoleToPage" Type="Self.RoleToPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RoleToPage">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TitleReviewerlink_ReviewerMaster">
+    <End Role="ReviewerMaster" Type="Self.ReviewerMaster" Multiplicity="1" />
+    <End Role="TitleReviewerlink" Type="Self.TitleReviewerlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewerMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TitleReviewerlink">
+        <PropertyRef Name="ReviewerMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbTransferDeskService_DevModelStoreContainer">
+    <EntitySet Name="AffillationMaster" EntityType="Self.AffillationMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AffillationReviewerlink" EntityType="Self.AffillationReviewerlink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AreaOfExpertiseMaster" EntityType="Self.AreaOfExpertiseMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AreaOfExpReviewerlink" EntityType="Self.AreaOfExpReviewerlink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArticleType" EntityType="Self.ArticleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoLoginEmailsForMSJournals" EntityType="Self.AutoLoginEmailsForMSJournals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookMaster" EntityType="Self.BookMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookUserRoles" EntityType="Self.BookUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepartmentMaster" EntityType="Self.DepartmentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailDetails" EntityType="Self.EmailDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorCategory" EntityType="Self.ErrorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grid_Link" EntityType="Self.Grid_Link" Schema="dbo" Table="Grid.Link" store:Type="Tables" />
+    <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageDropDownList" EntityType="Self.ImageDropDownList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageDropDownMenu" EntityType="Self.ImageDropDownMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImpersonateCredential " EntityType="Self.ImpersonateCredential " Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstituteMaster" EntityType="Self.InstituteMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Journal" EntityType="Self.Journal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalArticleTypes" EntityType="Self.JournalArticleTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalLink" EntityType="Self.JournalLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalReviewerLink" EntityType="Self.JournalReviewerLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalSections" EntityType="Self.JournalSections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalStatus" EntityType="Self.JournalStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JournalUserRoles" EntityType="Self.JournalUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manuscript" EntityType="Self.Manuscript" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookErrorCategory" EntityType="Self.ManuscriptBookErrorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookErrorCategoryHistory" EntityType="Self.ManuscriptBookErrorCategoryHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookLogin" EntityType="Self.ManuscriptBookLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookLoginDetails" EntityType="Self.ManuscriptBookLoginDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookScreening" EntityType="Self.ManuscriptBookScreening" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptBookScreeningHistory" EntityType="Self.ManuscriptBookScreeningHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptErrorCategory" EntityType="Self.ManuscriptErrorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptErrorCategoryHistory" EntityType="Self.ManuscriptErrorCategoryHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptHistory" EntityType="Self.ManuscriptHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptLogin" EntityType="Self.ManuscriptLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ManuscriptLoginDetails" EntityType="Self.ManuscriptLoginDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewerErrorCategory" EntityType="Self.MSReviewerErrorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewerErrorCategoryHistory" EntityType="Self.MSReviewerErrorCategoryHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewerLink" EntityType="Self.MSReviewerLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewersSuggestion" EntityType="Self.MSReviewersSuggestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewersSuggestionHistory" EntityType="Self.MSReviewersSuggestionHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSReviewersSuggestionInfo" EntityType="Self.MSReviewersSuggestionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSSAreaOfExpertise" EntityType="Self.MSSAreaOfExpertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSSReviewerMail" EntityType="Self.MSSReviewerMail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtherAuthor" EntityType="Self.OtherAuthor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OtherAuthorHistory" EntityType="Self.OtherAuthorHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageMaster" EntityType="Self.PageMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReferenceReviewerlink" EntityType="Self.ReferenceReviewerlink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReviewerErrorCategory" EntityType="Self.ReviewerErrorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReviewerMailLink" EntityType="Self.ReviewerMailLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReviewerMaster" EntityType="Self.ReviewerMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleToPage" EntityType="Self.RoleToPage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SearchByMaster" EntityType="Self.SearchByMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SlidingScale" EntityType="Self.SlidingScale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SysMaster" EntityType="Self.SysMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TitleMaster" EntityType="Self.TitleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TitleReviewerlink" EntityType="Self.TitleReviewerlink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_" EntityType="Self.User_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAdmin" EntityType="Self.UserAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArticleTypeAudit" EntityType="Self.ArticleTypeAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ArticleTypeAudit].[ID] AS [ID], 
+    [ArticleTypeAudit].[ArticleTypeName] AS [ArticleTypeName], 
+    [ArticleTypeAudit].[Status] AS [Status], 
+    [ArticleTypeAudit].[ModifiedDateTime] AS [ModifiedDateTime], 
+    [ArticleTypeAudit].[IsActive] AS [IsActive]
+    FROM [dbo].[ArticleTypeAudit] AS [ArticleTypeAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="JournalAudit" EntityType="Self.JournalAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [JournalAudit].[ID] AS [ID], 
+    [JournalAudit].[JournalTitle] AS [JournalTitle], 
+    [JournalAudit].[Status] AS [Status], 
+    [JournalAudit].[ModifiedDateTime] AS [ModifiedDateTime], 
+    [JournalAudit].[IsActive] AS [IsActive], 
+    [JournalAudit].[Link] AS [Link], 
+    [JournalAudit].[AliasName] AS [AliasName], 
+    [JournalAudit].[IsAliasActive] AS [IsAliasActive]
+    FROM [dbo].[JournalAudit] AS [JournalAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Manuscript_Backup" EntityType="Self.Manuscript_Backup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Manuscript_Backup].[ID] AS [ID], 
+    [Manuscript_Backup].[JournalID] AS [JournalID], 
+    [Manuscript_Backup].[MSID] AS [MSID], 
+    [Manuscript_Backup].[ArticleTypeID] AS [ArticleTypeID], 
+    [Manuscript_Backup].[SectionID] AS [SectionID], 
+    [Manuscript_Backup].[ArticleTitle] AS [ArticleTitle], 
+    [Manuscript_Backup].[CorrespondingEditor] AS [CorrespondingEditor], 
+    [Manuscript_Backup].[AssignedEditor] AS [AssignedEditor], 
+    [Manuscript_Backup].[StartDate] AS [StartDate], 
+    [Manuscript_Backup].[RoleID] AS [RoleID], 
+    [Manuscript_Backup].[UserID] AS [UserID], 
+    [Manuscript_Backup].[Crosscheck_iThenticateResultID] AS [Crosscheck_iThenticateResultID], 
+    [Manuscript_Backup].[Highest_iThenticateFromSingleSrc] AS [Highest_iThenticateFromSingleSrc], 
+    [Manuscript_Backup].[English_Lang_QualityID] AS [English_Lang_QualityID], 
+    [Manuscript_Backup].[Conclusion] AS [Conclusion], 
+    [Manuscript_Backup].[Ethics_ComplianceID] AS [Ethics_ComplianceID], 
+    [Manuscript_Backup].[TransferFrom] AS [TransferFrom], 
+    [Manuscript_Backup].[ReviewerComments] AS [ReviewerComments], 
+    [Manuscript_Backup].[Abstarct] AS [Abstarct], 
+    [Manuscript_Backup].[InitialSubmissionDate] AS [InitialSubmissionDate], 
+    [Manuscript_Backup].[AssociateTAT] AS [AssociateTAT], 
+    [Manuscript_Backup].[QualityCheck] AS [QualityCheck], 
+    [Manuscript_Backup].[QualityStartCheckDate] AS [QualityStartCheckDate], 
+    [Manuscript_Backup].[QualityEndDate] AS [QualityEndDate], 
+    [Manuscript_Backup].[FinalSubmitDate] AS [FinalSubmitDate], 
+    [Manuscript_Backup].[QualityTAT] AS [QualityTAT], 
+    [Manuscript_Backup].[Status] AS [Status], 
+    [Manuscript_Backup].[ModifiedDateTime] AS [ModifiedDateTime], 
+    [Manuscript_Backup].[CorrespondingAuthor] AS [CorrespondingAuthor], 
+    [Manuscript_Backup].[CorrespondingAuthorEmail] AS [CorrespondingAuthorEmail], 
+    [Manuscript_Backup].[CorrespondingAuthorAff] AS [CorrespondingAuthorAff], 
+    [Manuscript_Backup].[iThenticatePercentage] AS [iThenticatePercentage], 
+    [Manuscript_Backup].[OverallAnalysis] AS [OverallAnalysis], 
+    [Manuscript_Backup].[HasTransferReport] AS [HasTransferReport], 
+    [Manuscript_Backup].[Accurate] AS [Accurate], 
+    [Manuscript_Backup].[ErrorDescription] AS [ErrorDescription], 
+    [Manuscript_Backup].[QualityUserID] AS [QualityUserID]
+    FROM [dbo].[Manuscript_Backup] AS [Manuscript_Backup]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ManuscriptAudit" EntityType="Self.ManuscriptAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ManuscriptAudit].[ID] AS [ID], 
+    [ManuscriptAudit].[JournalID] AS [JournalID], 
+    [ManuscriptAudit].[MSID] AS [MSID], 
+    [ManuscriptAudit].[ArticleTypeID] AS [ArticleTypeID], 
+    [ManuscriptAudit].[SectionID] AS [SectionID], 
+    [ManuscriptAudit].[ArticleTitle] AS [ArticleTitle], 
+    [ManuscriptAudit].[CorrespondingEditor] AS [CorrespondingEditor], 
+    [ManuscriptAudit].[AssignedEditor] AS [AssignedEditor], 
+    [ManuscriptAudit].[StartDate] AS [StartDate], 
+    [ManuscriptAudit].[RoleID] AS [RoleID], 
+    [ManuscriptAudit].[UserID] AS [UserID], 
+    [ManuscriptAudit].[Crosscheck_iThenticateResultID] AS [Crosscheck_iThenticateResultID], 
+    [ManuscriptAudit].[Highest_iThenticateFromSingleSrc] AS [Highest_iThenticateFromSingleSrc], 
+    [ManuscriptAudit].[English_Lang_QualityID] AS [English_Lang_QualityID], 
+    [ManuscriptAudit].[Conclusion] AS [Conclusion], 
+    [ManuscriptAudit].[Ethics_ComplianceID] AS [Ethics_ComplianceID], 
+    [ManuscriptAudit].[TransferFrom] AS [TransferFrom], 
+    [ManuscriptAudit].[ReviewerComments] AS [ReviewerComments], 
+    [ManuscriptAudit].[Abstarct] AS [Abstarct], 
+    [ManuscriptAudit].[InitialSubmissionDate] AS [InitialSubmissionDate], 
+    [ManuscriptAudit].[AssociateTAT] AS [AssociateTAT], 
+    [ManuscriptAudit].[QualityCheck] AS [QualityCheck], 
+    [ManuscriptAudit].[QualityStartCheckDate] AS [QualityStartCheckDate], 
+    [ManuscriptAudit].[QualityEndDate] AS [QualityEndDate], 
+    [ManuscriptAudit].[FinalSubmitDate] AS [FinalSubmitDate], 
+    [ManuscriptAudit].[QualityTAT] AS [QualityTAT], 
+    [ManuscriptAudit].[Status] AS [Status], 
+    [ManuscriptAudit].[ModifiedDateTime] AS [ModifiedDateTime], 
+    [ManuscriptAudit].[CorrespondingAuthor] AS [CorrespondingAuthor], 
+    [ManuscriptAudit].[CorrespondingAuthorEmail] AS [CorrespondingAuthorEmail], 
+    [ManuscriptAudit].[CorrespondingAuthorAff] AS [CorrespondingAuthorAff], 
+    [ManuscriptAudit].[iThenticatePercentage] AS [iThenticatePercentage], 
+    [ManuscriptAudit].[OverallAnalysis] AS [OverallAnalysis], 
+    [ManuscriptAudit].[HasTransferReport] AS [HasTransferReport], 
+    [ManuscriptAudit].[Accurate] AS [Accurate], 
+    [ManuscriptAudit].[ErrorDescription] AS [ErrorDescription], 
+    [ManuscriptAudit].[QualityUserID] AS [QualityUserID], 
+    [ManuscriptAudit].[OverallAnalysisID] AS [OverallAnalysisID], 
+    [ManuscriptAudit].[IsAccurate] AS [IsAccurate], 
+    [ManuscriptAudit].[Comments_English_Lang_Quality] AS [Comments_English_Lang_Quality], 
+    [ManuscriptAudit].[Comments_Ethics_Compliance] AS [Comments_Ethics_Compliance], 
+    [ManuscriptAudit].[Comments_Crosscheck_iThenticateResult] AS [Comments_Crosscheck_iThenticateResult], 
+    [ManuscriptAudit].[ParentManuscriptID] AS [ParentManuscriptID], 
+    [ManuscriptAudit].[RevisedDate] AS [RevisedDate], 
+    [ManuscriptAudit].[Comments_OverallAnalysis] AS [Comments_OverallAnalysis], 
+    [ManuscriptAudit].[IsAssociateFinalSubmit] AS [IsAssociateFinalSubmit], 
+    [ManuscriptAudit].[IsQualityFinalSubmit] AS [IsQualityFinalSubmit], 
+    [ManuscriptAudit].[HandlingEditor] AS [HandlingEditor], 
+    [ManuscriptAudit].[JournalStatusID] AS [JournalStatusID]
+    FROM [dbo].[ManuscriptAudit] AS [ManuscriptAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RoleAudit" EntityType="Self.RoleAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RoleAudit].[ID] AS [ID], 
+    [RoleAudit].[RoleName] AS [RoleName], 
+    [RoleAudit].[Status] AS [Status], 
+    [RoleAudit].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[RoleAudit] AS [RoleAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SectionAudit" EntityType="Self.SectionAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SectionAudit].[ID] AS [ID], 
+    [SectionAudit].[SectionName] AS [SectionName], 
+    [SectionAudit].[Status] AS [Status], 
+    [SectionAudit].[ModifiedDateTime] AS [ModifiedDateTime], 
+    [SectionAudit].[IsActive] AS [IsActive]
+    FROM [dbo].[SectionAudit] AS [SectionAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="StatusMaster" EntityType="Self.StatusMaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [StatusMaster].[ID] AS [ID], 
+    [StatusMaster].[StatusCode] AS [StatusCode], 
+    [StatusMaster].[Description] AS [Description], 
+    [StatusMaster].[IsActive] AS [IsActive], 
+    [StatusMaster].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[StatusMaster] AS [StatusMaster]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserAdminAudit" EntityType="Self.UserAdminAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserAdminAudit].[ID] AS [ID], 
+    [UserAdminAudit].[UserID] AS [UserID], 
+    [UserAdminAudit].[IsAdmin] AS [IsAdmin], 
+    [UserAdminAudit].[Status] AS [Status], 
+    [UserAdminAudit].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[UserAdminAudit] AS [UserAdminAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserAudit" EntityType="Self.UserAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserAudit].[ID] AS [ID], 
+    [UserAudit].[EmpID] AS [EmpID], 
+    [UserAudit].[EmpUserID] AS [EmpUserID], 
+    [UserAudit].[EmpName] AS [EmpName], 
+    [UserAudit].[Email] AS [Email], 
+    [UserAudit].[EmpPhone] AS [EmpPhone], 
+    [UserAudit].[IsActive] AS [IsActive], 
+    [UserAudit].[Status] AS [Status], 
+    [UserAudit].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[UserAudit] AS [UserAudit]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserMasterSlidingRangeCount" EntityType="Self.UserMasterSlidingRangeCount" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserMasterSlidingRangeCount].[ID] AS [ID], 
+    [UserMasterSlidingRangeCount].[SlidingScale] AS [SlidingScale], 
+    [UserMasterSlidingRangeCount].[RangeFrom] AS [RangeFrom], 
+    [UserMasterSlidingRangeCount].[RangeTo] AS [RangeTo], 
+    [UserMasterSlidingRangeCount].[ManuscriptJobCount] AS [ManuscriptJobCount], 
+    [UserMasterSlidingRangeCount].[IsActive] AS [IsActive], 
+    [UserMasterSlidingRangeCount].[CreatedBy] AS [CreatedBy], 
+    [UserMasterSlidingRangeCount].[CreatedDate] AS [CreatedDate], 
+    [UserMasterSlidingRangeCount].[ModifiedBy] AS [ModifiedBy], 
+    [UserMasterSlidingRangeCount].[ModifiedDate] AS [ModifiedDate]
+    FROM [dbo].[UserMasterSlidingRangeCount] AS [UserMasterSlidingRangeCount]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserRolesAudit" EntityType="Self.UserRolesAudit" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserRolesAudit].[ID] AS [ID], 
+    [UserRolesAudit].[UserID] AS [UserID], 
+    [UserRolesAudit].[ServiceTypeId] AS [ServiceTypeId], 
+    [UserRolesAudit].[RollID] AS [RollID], 
+    [UserRolesAudit].[DefaultRollID] AS [DefaultRollID], 
+    [UserRolesAudit].[Status] AS [Status], 
+    [UserRolesAudit].[SlidingScaleId] AS [SlidingScaleId], 
+    [UserRolesAudit].[StatusTeamId] AS [StatusTeamId], 
+    [UserRolesAudit].[IsActive] AS [IsActive], 
+    [UserRolesAudit].[ModifiedDateTime] AS [ModifiedDateTime]
+    FROM [dbo].[UserRolesAudit] AS [UserRolesAudit]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AffillationReviewerlink_AffillationMaster" Association="Self.FK_AffillationReviewerlink_AffillationMaster">
+      <End Role="AffillationMaster" EntitySet="AffillationMaster" />
+      <End Role="AffillationReviewerlink" EntitySet="AffillationReviewerlink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AffillationReviewerlink_ReviewerMaster" Association="Self.FK_AffillationReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="AffillationReviewerlink" EntitySet="AffillationReviewerlink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster" Association="Self.FK_AreaOfExpertiseMaster_AreaOfExpertiseMaster">
+      <End Role="AreaOfExpertiseMaster" EntitySet="AreaOfExpertiseMaster" />
+      <End Role="AreaOfExpertiseMaster1" EntitySet="AreaOfExpertiseMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster" Association="Self.FK_AreaOfExpReviewerlink_AreaOfExpertiseMaster">
+      <End Role="AreaOfExpertiseMaster" EntitySet="AreaOfExpertiseMaster" />
+      <End Role="AreaOfExpReviewerlink" EntitySet="AreaOfExpReviewerlink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AreaOfExpReviewerlink_ReviewerMaster" Association="Self.FK_AreaOfExpReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="AreaOfExpReviewerlink" EntitySet="AreaOfExpReviewerlink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_State" Association="Self.FK_City_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JournalID" Association="Self.FK_JournalID">
+      <End Role="JournalArticleTypes" EntitySet="JournalArticleTypes" />
+      <End Role="JournalArticleTypes1" EntitySet="JournalArticleTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JournalReviewerLink_ReviewerMaster" Association="Self.FK_JournalReviewerLink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="JournalReviewerLink" EntitySet="JournalReviewerLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSReviewerLink_MSReviewersSuggestionInfo" Association="Self.FK_MSReviewerLink_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfo" />
+      <End Role="MSReviewerLink" EntitySet="MSReviewerLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSReviewersSuggestionInfo_MSReviewersSuggestion" Association="Self.FK_MSReviewersSuggestionInfo_MSReviewersSuggestion">
+      <End Role="MSReviewersSuggestion" EntitySet="MSReviewersSuggestion" />
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo" Association="Self.FK_MSSAreaOfExpertise_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfo" />
+      <End Role="MSSAreaOfExpertise" EntitySet="MSSAreaOfExpertise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSSReviewerMail_MSReviewersSuggestionInfo" Association="Self.FK_MSSReviewerMail_MSReviewersSuggestionInfo">
+      <End Role="MSReviewersSuggestionInfo" EntitySet="MSReviewersSuggestionInfo" />
+      <End Role="MSSReviewerMail" EntitySet="MSSReviewerMail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReferenceReviewerlink_ReviewerMaster" Association="Self.FK_ReferenceReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="ReferenceReviewerlink" EntitySet="ReferenceReviewerlink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReviewerMailLink_ReviewerMaster" Association="Self.FK_ReviewerMailLink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="ReviewerMailLink" EntitySet="ReviewerMailLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToPage_PageMaster" Association="Self.FK_RoleToPage_PageMaster">
+      <End Role="PageMaster" EntitySet="PageMaster" />
+      <End Role="RoleToPage" EntitySet="RoleToPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleToPage_Role" Association="Self.FK_RoleToPage_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="RoleToPage" EntitySet="RoleToPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_Country" Association="Self.FK_State_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TitleReviewerlink_ReviewerMaster" Association="Self.FK_TitleReviewerlink_ReviewerMaster">
+      <End Role="ReviewerMaster" EntitySet="ReviewerMaster" />
+      <End Role="TitleReviewerlink" EntitySet="TitleReviewerlink" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
